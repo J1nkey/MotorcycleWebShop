@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using MotorcycleWebShop.Domain.Entities;
 
 namespace MotorcycleWebShop.Domain.Common
 {
@@ -9,5 +10,7 @@ namespace MotorcycleWebShop.Domain.Common
         public string IdentificationNumber { get; set; }
         public DateTime Dob { get; set; }
         public string Avatar { get; set; }
+        public string FullName => FirstName + LastName;
+        public Provider Provider { get; set; }
     }
 }

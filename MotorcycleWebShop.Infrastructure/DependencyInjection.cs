@@ -15,6 +15,7 @@ namespace MotorcycleWebShop.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration, IHostEnvironment environment)
         {
+
             services.AddDbContext<ApplicationDbContext>((services, options) =>
             {
                 options.UseSqlServer(

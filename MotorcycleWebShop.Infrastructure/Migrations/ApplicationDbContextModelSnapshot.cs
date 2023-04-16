@@ -157,7 +157,6 @@ namespace MotorcycleWebShop.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Avatar")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -222,6 +221,37 @@ namespace MotorcycleWebShop.Infrastructure.Migrations
                     b.ToTable("ApplicationUsers", (string)null);
                 });
 
+            modelBuilder.Entity("MotorcycleWebShop.Domain.Entities.Manufacturer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<string>("From")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Manufacturers", (string)null);
+                });
+
             modelBuilder.Entity("MotorcycleWebShop.Domain.Entities.Motorcycle", b =>
                 {
                     b.Property<int>("Id")
@@ -271,6 +301,159 @@ namespace MotorcycleWebShop.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Motorcycles", (string)null);
+                });
+
+            modelBuilder.Entity("MotorcycleWebShop.Domain.Entities.Post", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CreateBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double>("CubicCentimeters")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Details")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("HorsePower")
+                        .HasColumnType("float");
+
+                    b.Property<double>("KilometersComsumption")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime?>("LastModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("LastModifiedBy")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MotorcycleId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProviderId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<double>("Torque")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MotorcycleId");
+
+                    b.HasIndex("ProviderId");
+
+                    b.ToTable("Posts", (string)null);
+                });
+
+            modelBuilder.Entity("MotorcycleWebShop.Domain.Entities.Provider", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<int>("ApplicationUserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CreateBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<DateTime?>("LastModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("LastModifiedBy")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUserId")
+                        .IsUnique();
+
+                    b.ToTable("Providers", (string)null);
+                });
+
+            modelBuilder.Entity("MotorcycleWebShop.Domain.Entities.Post", b =>
+                {
+                    b.HasOne("MotorcycleWebShop.Domain.Entities.Motorcycle", "Motorcycle")
+                        .WithMany("Posts")
+                        .HasForeignKey("MotorcycleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MotorcycleWebShop.Domain.Entities.Provider", "Provider")
+                        .WithMany("Posts")
+                        .HasForeignKey("ProviderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Motorcycle");
+
+                    b.Navigation("Provider");
+                });
+
+            modelBuilder.Entity("MotorcycleWebShop.Domain.Entities.Provider", b =>
+                {
+                    b.HasOne("MotorcycleWebShop.Domain.Common.ApplicationUser", "ApplicationUser")
+                        .WithOne("Provider")
+                        .HasForeignKey("MotorcycleWebShop.Domain.Entities.Provider", "ApplicationUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
+                });
+
+            modelBuilder.Entity("MotorcycleWebShop.Domain.Common.ApplicationUser", b =>
+                {
+                    b.Navigation("Provider")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("MotorcycleWebShop.Domain.Entities.Motorcycle", b =>
+                {
+                    b.Navigation("Posts");
+                });
+
+            modelBuilder.Entity("MotorcycleWebShop.Domain.Entities.Provider", b =>
+                {
+                    b.Navigation("Posts");
                 });
 #pragma warning restore 612, 618
         }

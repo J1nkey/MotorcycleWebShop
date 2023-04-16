@@ -11,5 +11,6 @@ namespace MotorcycleWebShop.Domain.Entities
         public double HorsePower { get; set; }
         public string ImagePath { get; set; }
         public int ManufacturerId { get; set; }
+        public ICollection<Post> Posts { get; set; }
     }
 }

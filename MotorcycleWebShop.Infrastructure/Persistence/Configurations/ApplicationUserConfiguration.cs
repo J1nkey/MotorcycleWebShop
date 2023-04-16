@@ -15,6 +15,7 @@ namespace MotorcycleWebShop.Infrastructure.Persistence.Configurations
             builder.Property(e => e.LastName).IsRequired().HasMaxLength(250);
             builder.Property(e => e.Dob).IsRequired();
             builder.Property(e => e.IdentificationNumber).IsRequired().HasMaxLength(12);
+            builder.Property(e => e.Avatar).IsRequired(false);
         }
     }
 }

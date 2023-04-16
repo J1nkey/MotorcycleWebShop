@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "htMpEg9MtYOKCC9AOnmnYTdta9ZzEC5cgN3yJNPE+MzXqBmfbVN+5wo2EqprL51e6xgKk9vZ5NfB47N0VQdFnw==",
+  "dgSpecHash": "4RUD44SKu3NBd5KBzlevGtdO6o/ipBsECeq6RxmeJ3NBz4gAlydT1JptgCEzI4q4Wnsfg5/7o+oHMYbC1Pv0aQ==",
   "success": true,
   "projectFilePath": "E:\\Workspace\\CS2022\\JinkeyProjects\\CleanArchitectureWebShop\\MotorcycleWebShop\\MotorcycleWebShop.Application\\MotorcycleWebShop.Application.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\catpi\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
     "C:\\Users\\catpi\\.nuget\\packages\\mediatr\\12.0.1\\mediatr.12.0.1.nupkg.sha512",
     "C:\\Users\\catpi\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\catpi\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.16\\microsoft.aspnetcore.authentication.jwtbearer.6.0.16.nupkg.sha512",
     "C:\\Users\\catpi\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.15\\microsoft.aspnetcore.cryptography.internal.6.0.15.nupkg.sha512",
     "C:\\Users\\catpi\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.15\\microsoft.aspnetcore.cryptography.keyderivation.6.0.15.nupkg.sha512",
     "C:\\Users\\catpi\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
@@ -29,10 +30,17 @@
     "C:\\Users\\catpi\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\catpi\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\catpi\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\catpi\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.10.0\\microsoft.identitymodel.jsonwebtokens.6.10.0.nupkg.sha512",
+    "C:\\Users\\catpi\\.nuget\\packages\\microsoft.identitymodel.logging\\6.10.0\\microsoft.identitymodel.logging.6.10.0.nupkg.sha512",
+    "C:\\Users\\catpi\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.10.0\\microsoft.identitymodel.protocols.6.10.0.nupkg.sha512",
+    "C:\\Users\\catpi\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.10.0\\microsoft.identitymodel.protocols.openidconnect.6.10.0.nupkg.sha512",
+    "C:\\Users\\catpi\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.10.0\\microsoft.identitymodel.tokens.6.10.0.nupkg.sha512",
     "C:\\Users\\catpi\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\catpi\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
+    "C:\\Users\\catpi\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.10.0\\system.identitymodel.tokens.jwt.6.10.0.nupkg.sha512",
     "C:\\Users\\catpi\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512",
-    "C:\\Users\\catpi\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\catpi\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\catpi\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

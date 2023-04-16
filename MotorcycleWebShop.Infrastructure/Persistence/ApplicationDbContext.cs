@@ -5,7 +5,6 @@ using MotorcycleWebShop.Application.Common.Interfaces;
 using MotorcycleWebShop.Domain.Common;
 using MotorcycleWebShop.Domain.Entities;
 using MotorcycleWebShop.Domain.Interfaces;
-using MotorcycleWebShop.Infrastructure.Persistence.Configurations;
 
 namespace MotorcycleWebShop.Infrastructure.Persistence
 {
@@ -32,6 +31,9 @@ namespace MotorcycleWebShop.Infrastructure.Persistence
         }
 
         public DbSet<Motorcycle> Motorcycles { get; set; }
+        public DbSet<Manufacturer> Manufacturers { get; set; }
+        public DbSet<Provider> Providers { get; set; }
+        public DbSet<Post> Posts { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {

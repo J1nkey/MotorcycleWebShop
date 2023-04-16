@@ -7,8 +7,9 @@ using MotorcycleWebShop.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var provider = builder.Services.BuildServiceProvider();
 builder.Services.AddInfrastructure(builder.Configuration, builder.Environment);
-builder.Services.AddApplication();
+builder.Services.AddApplication(builder.Configuration, provider);
 
 builder.Services.AddHttpContextAccessor();
 
@@ -37,6 +38,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

@@ -89,3 +89,4 @@ E:\Workspace\CS2022\JinkeyProjects\CleanArchitectureWebShop\MotorcycleWebShop\Mo
 E:\Workspace\CS2022\JinkeyProjects\CleanArchitectureWebShop\MotorcycleWebShop\MotorcycleWebShop\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 E:\Workspace\CS2022\JinkeyProjects\CleanArchitectureWebShop\MotorcycleWebShop\MotorcycleWebShop\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 E:\Workspace\CS2022\JinkeyProjects\CleanArchitectureWebShop\MotorcycleWebShop\MotorcycleWebShop\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\Workspace\CS2022\JinkeyProjects\CleanArchitectureWebShop\MotorcycleWebShop\MotorcycleWebShop\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
