@@ -6,7 +6,7 @@ namespace MotorcycleWebShop.Domain.Entities
     {
         public string Title { get; set; }
         public string Details { get; set; }
-        public double KilometersComsumption { get; set; }
+        public double KilometersConsumption { get; set; }
         public double CubicCentimeters { get; set; }
         public double HorsePower { get; set; }
         public double Torque { get; set; }

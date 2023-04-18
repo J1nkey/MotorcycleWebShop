@@ -16,7 +16,7 @@ namespace MotorcycleWebShop.Infrastructure.Persistence.Configurations
             builder.Property(t => t.CubicCentimeters).IsRequired();
             builder.Property(t => t.HorsePower).IsRequired();
             builder.Property(t => t.Torque).IsRequired();
-            builder.Property(t => t.KilometersComsumption).IsRequired();
+            builder.Property(t => t.KilometersConsumption).IsRequired();
 
             builder.HasOne(s => s.Motorcycle)
                 .WithMany(d => d.Posts)

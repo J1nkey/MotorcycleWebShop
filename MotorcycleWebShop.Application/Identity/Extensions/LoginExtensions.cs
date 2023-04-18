@@ -16,6 +16,7 @@ namespace MotorcycleWebShop.Application.Identity.Extensions
             var roles = await userManager.GetRolesAsync(user);
             var claims = new[]
             {
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new Claim(IdentityClaimTypes.Uid, user.Id.ToString()),
                 new Claim(IdentityClaimTypes.FullName, user.FullName),
                 new Claim(IdentityClaimTypes.Email, user.Email),
@@ -29,7 +30,7 @@ namespace MotorcycleWebShop.Application.Identity.Extensions
                 Issuer = options.ValidIssuer,
                 SigningCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(Encoding.UTF8.GetBytes(options.SecurityKey)),
-                    SecurityAlgorithms.HmacSha512Signature),
+                    SecurityAlgorithms.HmacSha256Signature),
                 Expires = DateTime.Now.AddMinutes(5),
             };
 

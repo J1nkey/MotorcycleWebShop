@@ -12,6 +12,9 @@ builder.Services.AddInfrastructure(builder.Configuration, builder.Environment);
 builder.Services.AddApplication(builder.Configuration, provider);
 
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddTransient<ICurrentUserService, CurrentUserService>();
+
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddSwaggerGen(setup =>
 {

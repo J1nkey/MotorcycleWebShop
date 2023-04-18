@@ -42,11 +42,11 @@ namespace MotorcycleWebShop.Infrastructure.Persistence
                 switch (entry.State)
                 {
                     case EntityState.Added:
-                        //entry.Entity.CreateBy = _currentUserService.UserId;
+                        entry.Entity.CreateBy = _currentUserService.UserId;
                         entry.Entity.CreatedAt = _dateTime.Now;
                         break;
                     case EntityState.Modified:
-                        //entry.Entity.LastModifiedBy = _currentUserService.UserId;
+                        entry.Entity.LastModifiedBy = _currentUserService.UserId;
                         entry.Entity.LastModifiedAt = _dateTime.Now; 
                         break;
                 }

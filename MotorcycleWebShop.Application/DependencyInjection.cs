@@ -23,12 +23,9 @@ namespace MotorcycleWebShop.Application
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
                 {
-                    JwtOptions jwtOptions = provider.GetService<IOptions<JwtOptions>>()!.Value;
-
-                    if (jwtOptions == null)
-                    {
-                        configuration.GetSection("JwtConfiguration").Bind(jwtOptions);
-                    }
+                    //JwtOptions jwtOptions = provider.GetService<IOptions<JwtOptions>>()!.Value;
+                    JwtOptions jwtOptions = new JwtOptions();
+                    configuration.GetSection("JwtConfiguration").Bind(jwtOptions);
 
                     options.TokenValidationParameters = new TokenValidationParameters
                     {

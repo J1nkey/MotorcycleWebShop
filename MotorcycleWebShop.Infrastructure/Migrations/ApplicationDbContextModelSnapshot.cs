@@ -327,7 +327,7 @@ namespace MotorcycleWebShop.Infrastructure.Migrations
                     b.Property<double>("HorsePower")
                         .HasColumnType("float");
 
-                    b.Property<double>("KilometersComsumption")
+                    b.Property<double>("KilometersConsumption")
                         .HasColumnType("float");
 
                     b.Property<DateTime?>("LastModifiedAt")
