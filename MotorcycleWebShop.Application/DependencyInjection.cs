@@ -19,6 +19,16 @@ namespace MotorcycleWebShop.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services, IConfiguration configuration, IServiceProvider provider)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("EnableCORS", policy =>
+                {
+                    policy.AllowAnyOrigin()
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+                });
+            });
+
             services.ConfigureOptions<JwtOptionsSetup>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>

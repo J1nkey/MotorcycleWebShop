@@ -3,10 +3,12 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MotorcycleWebShop.Application.Common.Interfaces;
 using MotorcycleWebShop.Application.Common.Models;
+using MotorcycleWebShop.Application.Manufacturers.Queries.GetAllManufacturersPaging;
 using MotorcycleWebShop.Application.Posts.Commands.CreatePost;
 using MotorcycleWebShop.Application.Posts.Commands.DeletePost;
 using MotorcycleWebShop.Application.Posts.Commands.UpdatePost;
 using MotorcycleWebShop.Application.Posts.Queries.GetBriefPost;
+using MotorcycleWebShop.Application.Posts.Queries.GetBriefPostByManufacturerIdPaging;
 
 namespace MotorcycleWebShop.Controllers
 {
@@ -20,9 +22,22 @@ namespace MotorcycleWebShop.Controllers
         }
 
         [HttpGet("[action]")]
-        public async Task<ActionResult<PaginatedList<BriefPostDto>>> GetBriefPostPaging(int pageNumber = 1, int pageSize = 10)
+        public async Task<ActionResult<PaginatedList<MotorcycleWebShop.Application.Posts.Queries.GetBriefPost.BriefPostDto>>> GetBriefPostPaging(int pageNumber = 1, int pageSize = 10)
         {
             var posts = await Mediator.Send(new GetBriefPostQuery { PageNumber = pageNumber, PageSize = pageSize });
+            return posts;
+        }
+
+        [HttpGet("[action]")]
+        [ProducesDefaultResponseType]
+        public async Task<ActionResult<GetBriefPostByManufacturerIdPagingQueryResponse>> GetBriefPostByManufacturerIdPaging([FromQuery]int manufactuerId, int pageNumber = 1, int pageSize = 10)
+        {
+            var posts = await Mediator.Send(new GetBriefPostByManufacturerIdPagingQuery
+            {
+                ManufacturerId = manufactuerId,
+                PageNumber = pageNumber,
+                PageSize = pageSize
+            });
             return posts;
         }
 

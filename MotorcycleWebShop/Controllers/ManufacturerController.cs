@@ -4,6 +4,7 @@ using MotorcycleWebShop.Application.Manufacturers.Commands.CreateManufacturer;
 using MotorcycleWebShop.Application.Manufacturers.Commands.DeleteManufacturerById;
 using MotorcycleWebShop.Application.Manufacturers.Commands.UpdateManufacturer;
 using MotorcycleWebShop.Application.Manufacturers.Queries.GetAllManufacturersPaging;
+using MotorcycleWebShop.Application.Manufacturers.Queries.GetManufacturerBriefPaging;
 
 namespace MotorcycleWebShop.Controllers
 {
@@ -43,6 +44,16 @@ namespace MotorcycleWebShop.Controllers
 
             await Mediator.Send(command);
             return NoContent();
+        }
+
+        [HttpGet("[action]")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesDefaultResponseType]
+        public async Task<ActionResult<PaginatedList<ManufacturerBriefDto>>> GetManufacturerBriefPaging(
+            [FromQuery]GetManufacturerBriefPagingQuery query)
+        {
+            var response = await Mediator.Send(query);
+            return Ok(response);
         }
     }
 }

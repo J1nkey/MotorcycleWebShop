@@ -7,7 +7,6 @@ using MotorcycleWebShop.Application.Motorcycles.Queries.GetAllMotorcycles;
 
 namespace MotorcycleWebShop.Controllers
 {
-    [ApiController]
     public class MotorcycleController : ApiController
     {
         [HttpGet]
